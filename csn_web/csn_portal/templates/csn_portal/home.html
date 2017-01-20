@@ -1,0 +1,87 @@
+{% extends "template.html" %}
+{% load static_new %}
+{% block page_title %}Cambridge Sensor Network{% endblock %}
+{% block mobile_title %}CSN{% endblock %}
+
+{% block content %}
+        <div class="cards-section">
+            <div class="cards-section-title mdl-typography--display-1-color-contrast">Cambridge Sensor Network</div>
+
+            <!-- PEOPLE -->
+            <div class="card-container mdl-grid">
+                <!-- PEOPLE -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__media">
+                        <img src="{% static 'csn_web/images/dan.jpg' %}">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">People</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">You can register or login and find other people with public profiles.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="aqua-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="/">
+                            View people page
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
+                <!-- DEVICES -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__media">
+                        <img src="{% static 'csn_web/images/sensor_340x340.png' %}">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Devices</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">You can add/remove your devices and control where they send their data.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="aqua-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="/">
+                            Manage devices
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
+                <!-- SERVERS -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__media">
+                        <img src="{% static 'csn_web/images/server_340x340.jpg' %}">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Servers</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">Here you can register servers you want to receive your data (or you can use this website)</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="aqua-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="/">
+                            Manage servers
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ABOUT -->
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                    <div class="mdl-card__media">
+                        <img src="{% static 'csn_web/images/sc_340x340.png' %}">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">About</h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <span class="mdl-typography--font-light mdl-typography--subhead">Who we are, and what we're doing.</span>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="aqua-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="/">
+                            Read all about us
+                            <i class="material-icons">chevron_right</i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+{% endblock %}

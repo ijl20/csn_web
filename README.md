@@ -20,3 +20,46 @@ the sensors.
 ## Device Management
 
 ## Server Management
+
+## Installation
+```
+python3 -m venv csn_web_venv
+mkdir csn_web
+cd csn_web
+source ~/csn_web_venv/bin/activate
+python3 -m pip install django
+python3 -m pip install --upgrade pip
+django-admin.py startproject csn_web
+git init
+
+cp ../tfc_web/.gitignore .
+git add --all .
+git commit -m "Initial csn_web project start"
+python3 -m pip install gunicorn
+cd csn_web
+gunicorn --bind localhost:8099 csn_web.wsgi
+python3 -m pip install whitenoise
+
+# install postgresql
+sudo apt update
+sudo apt upgrade
+sudo apt install postgresql postgresql-contrib libpq-dev python-dev
+
+sudo -u postgres psql
+
+sudo -u postgres createdb csn_prod
+sudo -u postgres createuser csn_prod --interactive
+sudo adduser csn_prod
+sudo -u csn_prod psql
+
+# setup nginx for https://<host>/csn
+
+sudo cp csn_web/config/nginx/includes/csn_web_port_443.conf /etc/nginx/includes/
+sudo service nginx restart
+
+python3 -m pip install psycopg2
+
+ssh csn_prod@localhost
+ssh-keygen -t rsa -C "csn_prod@tfc-app2"
+sudo cp ~/.ssh/authorized_keys /home/csn_prod/.ssh
+sudo chown csn_prod:csn_prod /home/csn_prod/.ssh/authorized_keys
